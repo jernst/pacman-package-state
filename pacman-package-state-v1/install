@@ -1,0 +1,45 @@
+#
+# This install file for this package.
+#
+
+echo '++ install: executed'
+
+_report() {
+    for f in pacman-package-state-1 pacman-package-state-2; do
+        if [[ -e /etc/$f ]]; then
+            echo '  ++ exists:        ' $f 'content:' $(cat /etc/$f)
+        else
+            echo '  ++ does not exist:' $f
+        fi
+    done
+}
+
+pre_install() {
+    echo '++ install: pre_install ' $@
+    _report
+}
+
+post_install() {
+    echo '++ install: post_install ' $@
+    _report
+}
+
+pre_upgrade() {
+    echo '++ install: pre_upgrade ' $@
+    _report
+}
+
+post_upgrade() {
+    echo '++ install: post_upgrade ' $@
+    _report
+}
+
+pre_remove() {
+    echo '++ install: pre_remove ' $@
+    _report
+}
+
+post_remove() {
+    echo '++ install: post_remove ' $@
+    _report
+}

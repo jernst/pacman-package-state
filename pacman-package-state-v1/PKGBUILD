@@ -1,0 +1,29 @@
+url="https://github.com/jernst/pacman-package-state/"
+maintainer='Johannes Ernst'
+pkgname=pacman-package-state
+pkgver=1.0
+pkgrel=1
+pkgdesc="Package for debugging and understanding the pacman package lifecycle"
+arch=('any')
+license=('MIT')
+options=('!strip')
+install=install
+
+prepare() {
+    echo '-- prepare'
+}
+
+build() {
+    echo '-- build'
+}
+
+check() {
+    echo '-- check'
+}
+
+package() {
+    echo '-- package'
+
+    mkdir -p ${pkgdir}/etc/
+    echo This is from ${pkgname}-${pkgver} > ${pkgdir}/etc/pacman-package-state-1
+}
